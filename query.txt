@@ -1,0 +1,12 @@
+SELECT 
+    pt.pokemon_id as pokemon_id, 
+    pt.pokemon_name as pokemon_name, 
+    pt.pokemon_type as pokemon_type, 
+    ps.name as move_name, 
+    ps.total_damage as total_damage 
+FROM 
+    pokemon_types pt
+INNER JOIN
+    pokemon_stats ps
+ON (pt.pokemon_type = ps.type)
+ORDER BY pokemon_id, pokemon_name, pokemon_type, move_name
